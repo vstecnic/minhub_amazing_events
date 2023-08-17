@@ -16,12 +16,13 @@ header{
 }
 main{
     background-color: grey;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    /* padding-top: 2em; */
+    /* padding-bottom: 2em; */
     
 }
 footer{
-    display: flex;
+    display:inline-block;
+    width: 100%;
     background-color:rgb(27,27,27);
     color: grey;
     justify-content: center;
@@ -33,7 +34,11 @@ footer{
     text-decoration: underline;
 }
 .logo{
-    width: 15%;
+    width: 25%;
+}
+.nav-link{
+    /* display: flex; */
+    margin-left: 4em;   
 }
 .carrousel{
 width: 100%;
@@ -42,7 +47,7 @@ width: 100%;
 
 #filter_nav{
     background-color: rgb(13, 22, 22) !important;
-width: 100%;
+    width: 100%;
 }
 
 .cards{
@@ -51,7 +56,11 @@ width: 100%;
     padding-top: 2em;
 
 }
-
+.social_footer{
+    display: flex;
+    background-color: blanchedalmond;
+    width: 100%;
+}
 
 /* uevents.html    */
 
