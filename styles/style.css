@@ -6,23 +6,23 @@
 }
 
 body{
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
 }
 header{
     display: flex;
     flex-direction: row;
-    gap: 25em;
+    /* gap:2em; */
     background-color:rgb(27,27,27) ;
 }
 main{
-    background-color: grey;
+    /* background-color: grey; */
     /* padding-top: 2em; */
     /* padding-bottom: 2em; */
     
 }
 footer{
     display:inline-block;
-    width: 100%;
+    /* width: 100%; */
     background-color:rgb(27,27,27);
     color: grey;
     justify-content: center;
@@ -35,13 +35,20 @@ footer{
 }
 .logo{
     width: 25%;
+    /* background-color: aqua; */
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .nav-link{
     /* display: flex; */
-    margin-left: 4em;   
+    /* margin-left: 4em;   */
 }
 .carrousel{
-width: 100%;
+min-width: 8vw;
+max-width: 200vh;
 
 }
 
@@ -54,12 +61,18 @@ width: 100%;
     display: flex;
     justify-content: space-around;
     padding-top: 2em;
+    padding-bottom: 2em;
 
 }
 .social_footer{
     display: flex;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     width: 100%;
+    
+}
+.social_icon{
+    width: 3em;
+    margin: 1em;
 }
 
 /* uevents.html    */

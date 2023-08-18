@@ -1,125 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    
-    <title>HOME</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <title>HOME</title>
 </head>
+
 <body>
-    <header>
-        <img src="./assets/amazing_brand.png" alt="amazing_events_logo" class="logo">   
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="#" id="active">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">UPCOMING EVENTS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">PAST EVENTS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">STATS</a>
-                </li>
-                </ul>
+  <header class="row">
+    <img src="./assets/amazing_brand.png" alt="amazing_events_logo" class="logo col-12 col-lg-2">
+    <nav class="navbar navbar-expand-lg bg-body-secondary col-12 col-lg-10" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" id="active">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">UPCOMING EVENTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">PAST EVENTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">STATS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div>
+      <div class="carrousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/books.jpg" class="d-block w-100" alt="...">
             </div>
+            <div class="carousel-item">
+              <img src="./assets/cinema.jpg" class="d-block w-100" alt="...">
             </div>
+            <div class="carousel-item">
+              <img src="./assets/costume_party.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="filter_nav d-flex row">
+        <nav class="navbar bg-body-tertiary " id="filter_nav" data-bs-theme="dark">
+          <div class="container d-flex row col-12">            
+            <form class="d-flex row" role="search">
+              <input type="checkbox" name="Category1" id="Category1" value="Category1">
+              <label for="Category1">Category1</label>
+              <input type="checkbox" name="Category2" id="Category2" value="Category2">
+              <label for="Category2">Category2</label>
+              <input type="checkbox" name="Category3" id="Category3" value="Category3">
+              <label for="Category3">Category3</label>
+              <input type="checkbox" name="Category4" id="Category4" value="Category4">
+              <label for="Category4">Category4</label>
+              <input type="checkbox" name="Category5" id="Category5" value="Category5">
+              <label for="Category5">Category5</label>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
         </nav>
-    </header>
-    <main>
-        <div class="carrousel">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./assets/books.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./assets/cinema.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./assets/costume_party.jpg" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-        </div>
+      </div>
 
-        <div class="filter_nav">
-            <nav class="navbar bg-body-tertiary"  id="filter_nav">
-                <div class="container-fluid">
-                  <a class="navbar-brand">Select your filter</a>
-                  <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
+      <div class="cards row gap-3">
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/marathon.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
         </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/food_fair.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/music_concert.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/costume_party.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
 
-        <div class="cards">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>   
-    </main>
-    <footer>
-        <div class="social_footer">
-          <img src="./assets/social_icons/twitter.svg" alt="">
-          <img src="./assets/social_icons/linkedin.svg" alt="">
-          <img src="./assets/social_icons/whatsapp.svg" alt="">
-          <h4>Cohort03-TN</h4>
-        </div>
-       
-        <p>Designed by Juan Gabriel Soto Valenzuela &copy;2023 | Contact <a href="https://github.com/vstecnic">Here</a> </p>
-    </footer>
-    
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+  </main>
+  <footer class="row d-flex">
+    <div class="social_footer col-12  col-lg-6 justify-content-center" data-bs-theme="dark">
+      <img src="./assets/social_icons/twitter.svg" alt="" class="social_icon">
+      <img src="./assets/social_icons/linkedin.svg" alt="" class="social_icon">
+      <img src="./assets/social_icons/whatsapp.svg" alt="" class="social_icon">
+    </div>
+    <h4 class="col-12  col-lg-6 text-center">Cohort03-TN</h4>
+    <p class="col-12  col-lg-6 text-center">Designed by Juan Gabriel Soto Valenzuela &copy;2023 | Contact <a href="https://github.com/vstecnic">Here</a> </p>
+  </footer>
+
 </body>
+
 </html>
