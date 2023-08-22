@@ -1,97 +1,76 @@
-/* Serialyzer */
 /* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    /* background-color: cadetblue; */
-}
-header{
-    display: flex;
-    flex-direction: row;
-    /* gap:2em; */
-    background-color:rgb(27,27,27) ;
-}
-main{
-    /* background-color: grey; */
-    /* padding-top: 2em; */
-    /* padding-bottom: 2em; */
-    
-}
-footer{
-    display:inline-block;
-    /* width: 100%; */
-    background-color:rgb(27,27,27);
-    color: grey;
-    justify-content: center;
-}
-
-/* index.html    */
-
-#active{
-    text-decoration: underline;
-}
-.logo{
-    width: 100%;
-    background-color: #343A40;
-}
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.nav-link{
-    /* display: flex; */
-    /* margin-left: 4em;   */
-   
-}
-.carrousel{
-min-width: 8vw;
-max-width: 200vh;
-
-}
-
-#filter_nav{
-    background-color: rgb(13, 22, 22) !important;
-    width: 100%;
-}
-
-.cards{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 2em;
-    padding-bottom: 2em;
-
-/* }
-.social_footer{
-    display: flex;
-    /* background-color: blanchedalmond; */
-    width: 100%;
-    
-}
-.social_icon{
-    width: 3em;
-    margin: 1em;
+    outline: 1px solid red;
 } */
 
-/* uevents.html    */
+.logo{
+    width: 100%;
+    /* background-color: #343A40; */
+    background-color: #040D12;
+}
+.bk_color{
+    background-color: #040D12;
+    color: white;
+    text-decoration: none;
+}
+.img_carrousel{
+/* object-fit: cover; */
+height: 350px;
+}
+h1{
+    position: absolute;
+    font-size:5rem !important;
+    color:white !important;
+    /* text-align: center; */
+    text-shadow: 1px 1px 1px black;
+    top:5.5em;
+    left: 0.5em;
+ 
+}
+@media only screen and (min-width:446px) and (max-width:768px){ 
+    h1{
+        top:5em;
+        left:0.5em;      
+    }
+}
+ @media only screen and (min-width:769px){ 
+    h1{
+        top:5em;
+        left: 0.5em;
+       
+        
+    } 
+    footer{
+    
+    }
+ } 
+@media only screen and  (min-width:1024px){
+    h1{
+        top:3em;
+        left: 7em;    
+    }
+}
 
+header{
+    min-height: 10vh;
+    background-color: #040D12;
+}
+main{
+    min-height: 14vh;
+    background-color: #040D12;
+}
+.categories{
+    color: grey;
+}
+footer{
+    min-height: 2vh;
+    background-color: #273f4c;
+    color:grey
+    
+}
 
-
-
-
-/* pevents.html    */
-
-
-
-
-
-/* contact.html    */
-
-
-
-
-stats.html    */
+.search_img{
+width: 2em;
+}
+.social_icon{
+    width: 2.5em;
+}
