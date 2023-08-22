@@ -1,0 +1,60 @@
+*{
+    outline: 1px solid red;
+}
+
+.logo{
+    width: 100%;
+    /* background-color: #343A40; */
+}
+.img_carrousel{
+/* object-fit: cover; */
+height: 350px;
+border: 2px solid red;
+}
+h1{
+    position: absolute;
+    font-size:5rem !important;
+    color:white !important;
+    /* text-align: center; */
+    text-shadow: 1px 1px 1px black;
+    top:5.5em;
+    left: 0.5em;
+ 
+}
+@media only screen and (min-width:446px) and (max-width:768px){ 
+    h1{
+        top:5em;
+        left:0.5em;      
+    }
+}
+ @media only screen and (min-width:769px){ 
+    h1{
+        top:5em;
+        left: 0.5em;
+       
+        
+    } 
+    footer{
+    
+    }
+ } 
+@media only screen and  (min-width:1024px){
+    h1{
+        top:3em;
+        left: 7em;    
+    }
+}
+
+header{
+    min-height: 10vh;
+    background-color: #040D12;
+}
+main{
+    min-height: 14vh;
+    background-color: #183D3D;
+}
+footer{
+    min-height: 2vh;
+    background-color: rgb(147, 177, 166);
+    color: bisque;
+}

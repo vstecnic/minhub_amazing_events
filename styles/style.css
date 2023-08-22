@@ -1,5 +1,5 @@
 /* Serialyzer */
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -34,17 +34,19 @@ footer{
     text-decoration: underline;
 }
 .logo{
-    width: 25%;
-    /* background-color: aqua; */
+    width: 100%;
+    background-color: #343A40;
 }
 .navbar{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .nav-link{
     /* display: flex; */
     /* margin-left: 4em;   */
+   
 }
 .carrousel{
 min-width: 8vw;
@@ -63,7 +65,7 @@ max-width: 200vh;
     padding-top: 2em;
     padding-bottom: 2em;
 
-}
+/* }
 .social_footer{
     display: flex;
     /* background-color: blanchedalmond; */
@@ -73,7 +75,7 @@ max-width: 200vh;
 .social_icon{
     width: 3em;
     margin: 1em;
-}
+} */
 
 /* uevents.html    */
 
@@ -92,4 +94,4 @@ max-width: 200vh;
 
 
 
-/* stats.html    */
+stats.html    */
