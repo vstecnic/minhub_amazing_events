@@ -1,15 +1,20 @@
-*{
+/* *{
     outline: 1px solid red;
-}
+} */
 
 .logo{
     width: 100%;
     /* background-color: #343A40; */
+    background-color: #040D12;
+}
+.bk_color{
+    background-color: #040D12;
+    color: white;
+    text-decoration: none;
 }
 .img_carrousel{
 /* object-fit: cover; */
 height: 350px;
-border: 2px solid red;
 }
 h1{
     position: absolute;
@@ -51,10 +56,20 @@ header{
 }
 main{
     min-height: 14vh;
-    background-color: #183D3D;
+    background-color: #040D12;
+}
+.categories{
+    color: grey;
 }
 footer{
     min-height: 2vh;
-    background-color: rgb(147, 177, 166);
-    color: bisque;
+    background-color: #273f4c;
+    color:grey
+    
+}
+.search_img{
+width: 2em;
+}
+.social_icon{
+    width: 2.5em;
 }
