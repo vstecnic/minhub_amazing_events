@@ -18,13 +18,23 @@ height: 350px;
 }
 h1{
     position: absolute;
-    font-size:5rem !important;
+    font-size:3rem !important;
     color:white !important;
     /* text-align: center; */
     text-shadow: 1px 1px 1px black;
-    top:5.5em;
+    top:8.5em;
     left: 0.5em;
  
+}
+.h1_upcoming {
+    top: 7.5em;
+    font-size: 3rem !important;
+
+
+}
+.h1_past{
+    top: 7.5em;
+    font-size: 3rem !important;
 }
 @media only screen and (min-width:446px) and (max-width:768px){ 
     h1{
@@ -45,8 +55,17 @@ h1{
  } 
 @media only screen and  (min-width:1024px){
     h1{
-        top:3em;
-        left: 7em;    
+        top:5em;
+        left: 12.5em;    
+    }
+    .h1_upcoming{
+        top: 4em;
+        left: 11em;
+    
+    }
+    .h1_past{
+        top: 5em;
+        left: 12em;
     }
 }
 
