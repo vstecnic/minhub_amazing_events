@@ -88,6 +88,10 @@ main{
 .categories{
     color: grey;
 }
+.first_name, .last_name, .message_form {
+    color:grey;
+}
+
 .table{
     /* display: table; */
       
@@ -98,7 +102,7 @@ main{
 footer{
     min-height: 2vh;
     background-color: #273f4c;
-    color:grey
+    color:grey;
     
 }
 
