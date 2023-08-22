@@ -88,6 +88,12 @@ main{
 .categories{
     color: grey;
 }
+.table{
+    /* display: table; */
+      
+     /* display: table-cell; */
+       
+}
 
 footer{
     min-height: 2vh;
