@@ -25,7 +25,7 @@ function crearCard(objeto){
     <div class="card-body">
         <h5 class="card-title">${objeto.name}</h5>
         <p class="card-text"><b>${objeto.category}</b> <br> <b>Date: </b>${objeto.date}</p>
-        <a href="./pages/details.html" class="btn btn-primary">More Info</a>
+        <a href="../pages/details.html" class="btn btn-primary">More Info...</a>
     </div>
 </div>` 
 }
