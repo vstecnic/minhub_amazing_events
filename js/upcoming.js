@@ -12,7 +12,7 @@ mostrarTarjetas(data.events, contenedorTarjetas)
 function mostrarTarjetas(datosGenerales, ubicacion){
     let tarjetas =""
     for (objeto of datosGenerales){
-         if (objeto.date < Date){
+         if (objeto.date > Date){
             tarjetas += crearCard(objeto)
         }else{console.log("cards no visibles por fechas no correspondidas a la página actual...")}
     }
