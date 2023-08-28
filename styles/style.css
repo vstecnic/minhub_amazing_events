@@ -1,6 +1,6 @@
-/* *{
+*{
     outline: 1px solid red;
-} */
+}
 
 .logo{
     width: 100%;
@@ -23,14 +23,18 @@ h1{
     /* text-align: center; */
     text-shadow: 1px 1px 1px black;
     top:8.5em;
-    left: 0.5em;
+    left: 1.9em;
  
 }
 .h1_upcoming {
     top: 7.5em;
     font-size: 3rem !important;
+    left: 0.9em;
 
-
+}
+.h1_contact{
+    top: 8.5em;
+    left: 0.5em;
 }
 .h1_past{
     top: 7.5em;
@@ -43,27 +47,51 @@ h1{
     }
 }
  @media only screen and (min-width:769px){ 
-    h1{
+    #h1_home{
         top:5em;
-        left: 0.5em;
-       
-        
+        left: 12em;
+    }
+    .h1_contact{
+        top:5em;
+        left: 11em;  
     } 
+    .h1_upcoming{
+        top:5em;
+        left: 11em !important;  
+    } 
+    .h1_past{
+        top:5em;
+        left: 12em !important;  
+    } 
+    #h1_stats{
+        top:5em;
+        left: 12em;
+    }
+
+    #message{
+        width: 79%;
+        margin-left: 11px;
+        /* background-color: blue !important; */
+    }
+
+    #sign_in{
+        margin-left: 15em !important;
+    }
    
  } 
 @media only screen and  (min-width:1024px){
     h1{
         top:5em;
-        left: 12.5em;    
+        left: 9.5em;    
     }
     .h1_upcoming{
-        top: 4em;
-        left: 11em;
+        top: 5em;
+        left: 9.5em;
     
     }
     .h1_past{
         top: 5em;
-        left: 12em;
+        left: 9.5em;
     }
     .sign_in{
         /* position: absolute; */
@@ -72,6 +100,9 @@ h1{
         left: 35em;
        
         
+    }
+    textarea{
+        width: 81%;
     }
      footer{
         display: flex;
