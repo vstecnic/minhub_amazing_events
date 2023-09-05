@@ -1,5 +1,4 @@
 const contenedor = document.getElementById('container_checks')
-//
 const buscador = document.getElementById('buscador')
 
 
@@ -7,9 +6,6 @@ let categorias= extraerCategorias(data.events)
 // pintarSwitches(categorias, contenedorCategorias)
 pintarSwitches(categorias, contenedor)
 
-// contenedorCategorias.addEventListener("change", ()=>{
-
-// })
 
 buscador.addEventListener("input", ()=>{
   let filtro1 = filtrarPorTexto(data.events, buscador.value)
@@ -17,17 +13,14 @@ buscador.addEventListener("input", ()=>{
 })
 
 contenedor.addEventListener("change", ()=>{
-    let filtro2 = filtrarPorCategoria(data.events)
-    mostrarTarjetas(filtro2, contenedorTarjetas)
+  console.log("algo cambio")
+  let filtro1= filtrarPorCategoria(data.events)
+  console.log(filtro1)
+  mostrarTarjetas(filtro1,contenedorTarjetas)
+  // filtrarPorCategoria(data.events)
+  // let filtro2 = filtrarPorCategoria(data.events)
+    // mostrarTarjetas(filtro2, contenedorTarjetas)
   })
-
-
-
-
-
-
-
-
 
 
 
@@ -60,29 +53,13 @@ function filtrarPorTexto(arreglo, texto){
 
 function filtrarPorCategoria(arreglo){
   let checkboxes= Array.from(document.getElementsByClassName("form-check-input"))
-  let checkboxesActivados = checkboxes.filter(check=> check.checked)
-  let valuesDeChecked= checkboxesActivados.map(cadaCheckActivado=>cadaCheckActivado.value)
-  let arregloFiltradoCheked= arreglo.filter(elemento=>valuesDeChecked.includes(data.category))
-  return arregloFiltradoCheked
+  // let arrayCheckboxes = Array.from(checkboxes)
+  let checkAzules = checkboxes.filter( check => check.checked)
+  let valoresChecks = checkAzules.map(check => check.value)
+  if(valoresChecks.length==0){
+    return arreglo
+  }
 }
-
-
-
-
-
-
-// let categorias = extraerCategorias(frutas)
-
-
-// pintarSwitches(colores, contenedorColor, "colores")
-
-// pintarSwitches(temporadas, contenedorTemporada, "temporadas")
-
-// contenedorTemporada.addEventListener("change",filtroTriple)
-
-// contenedorColor.addEventListener("change",filtroTriple)
-
-// buscador.addEventListener("input",filtroTriple)
 
 
 
@@ -91,6 +68,9 @@ function filtrarPorCategoria(arreglo){
 //** pintar tarjetas  */
  let contenedorTarjetas = document.getElementById("contenido")
 
+
+
+ 
  mostrarTarjetas(data.events, contenedorTarjetas)
 
  function mostrarTarjetas(datosGenerales, ubicacion){
@@ -98,7 +78,7 @@ function filtrarPorCategoria(arreglo){
      for (objeto of datosGenerales){
        tarjetas += crearCard(objeto)
      }
-     contenido.innerHTML = tarjetas
+     ubicacion.innerHTML = tarjetas
  }
 
 function crearCard(objeto){
