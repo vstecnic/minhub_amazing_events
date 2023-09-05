@@ -71,7 +71,7 @@ function crearCard(objeto){
     <img src="${objeto.image}" class="card-img-top p-2" alt="...">    <div class="card-body">
          <h5 class="card-title">${objeto.name}</h5>
          <p class="card-text">${objeto.category}</b> <br> <b>Date: </b>${objeto.date}</p>
-         <a href="./pages/details.html" class="btn btn-primary">More Info...</a>
+         <a href="./pages/details.html?id=${objeto._id}" class="btn btn-primary">More Info...</a>
      </div>
  </div>` 
  }

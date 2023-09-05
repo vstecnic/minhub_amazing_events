@@ -13,7 +13,7 @@ buscador.addEventListener("input", ()=>{
 })
 
 contenedor.addEventListener("change", ()=>{
-  console.log("algo cambio")
+  console.log("me tocaste un check!")
   let filtro1= filtrarPorCategoria(data.events)
   console.log(filtro1)
   mostrarTarjetas(filtro1,contenedorTarjetas)
@@ -70,7 +70,7 @@ function filtrarPorCategoria(arreglo){
 
 
 
- 
+
  mostrarTarjetas(data.events, contenedorTarjetas)
 
  function mostrarTarjetas(datosGenerales, ubicacion){
@@ -87,7 +87,8 @@ function crearCard(objeto){
          <h5 class="card-title">${objeto.name}</h5>
          <p class="card-text">Category: ${objeto.category}</b> <br> <b>Date: </b>${objeto.date}
          <br> <b>Category: </b>${objeto.category}</p>
-         <a href="./pages/details.html" class="btn btn-primary">More Info...</a>
+         <a href="./pages/details.html?id=${objeto._id}" class="btn btn-primary">More Info...</a>
      </div>
  </div>` 
  }
+
