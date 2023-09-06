@@ -192,19 +192,6 @@ const data = {
       price: 250,
       __v: 0,
     },
-    {
-      _id: "639c723d992482e5f2834c04",
-      name: "Avengers",
-      image: "https://i.postimg.cc/T3C92KTN/scale.jpg",
-      date: "2023-10-15",
-      description:
-        "Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
-      category: "Cinema1111",
-      place: "Room D1",
-      capacity: 9000,
-      estimate: 9000,
-      price: 250,
-      __v: 0,
-    },
+    
   ],
 };
