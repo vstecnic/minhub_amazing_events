@@ -1,6 +1,6 @@
 let parametros = new URLSearchParams(window.location.search)
 let id =parametros.get("id")
-let contenedorTarjetas = document.getElementById("contenido")
+const contenedorTarjetas = document.getElementById("contenido")
 
 
 let tarjetaDetail = buscarCardDetail(id)
@@ -8,37 +8,28 @@ console.log(tarjetaDetail)
 
 mostrarTarjeta(tarjetaDetail, contenedorTarjetas)
 
-function mostrarTarjeta(tarjeta, ubicacion){
-   
-    ubicacion.innerHTML = crearCard(tarjeta)
-}
+function buscarCardDetail(id){
+    let eventoEncontrado = data.events.find(elemento =>elemento._id==id)
+    console.log(eventoEncontrado)
+    return eventoEncontrado
+ }
 
 function crearCard(objeto){
   return    `<div class="card" style="width: 18rem;" >
    <img src="${objeto.image}" class="card-img-top p-2" alt="...">    <div class="card-body">
         <h5 class="card-title">${objeto.name}</h5>
-        <p class="card-text">Category: ${objeto.category}</b> <br> <b>Date: </b>${objeto.date}
-        <br> <b>Category: </b>${objeto.category}</p>
-        <a href="./pages/details.html?id=${objeto._id}" class="btn btn-primary">More Info...</a>
+        <p class="card-text"> <b>Category: </b>${objeto.category}</b> 
+        <p class="card-text"><b>Description: </b> ${objeto.description}</b> 
+        <p class="card-text"><b>Place: </b>${objeto.place}</b> 
+        <p class="card-text"><b>Capacity: </b>${objeto.capacity}</b> 
+        <p class="card-text"><b>Estimate: </b>${objeto.estimate}</b> 
+        <p class="card-text"><b>price: </b>${objeto.price}</b> 
+        
     </div>
 </div>` 
 }
+function mostrarTarjeta(tarjeta, ubicacion){
+   
+    ubicacion.innerHTML = crearCard(tarjeta)
+}
 
-// function crearCard(objeto){
-//     return    `<div class="card" style="width: 18rem;" >
-//      <img src="${objeto.image}" class="card-img-top p-2" alt="...">    <div class="card-body">
-//           <h5 class="card-title">${objeto.name}</h5>
-//           <p class="card-text">${objeto.category}</b> <br> <b>Date: </b>${objeto.date}</p>
-//           <a href="./pages/details.html?id=${objeto._id}" class="btn btn-primary">More Info...</a>
-//       </div>
-//   </div>` 
-//   }
-
-// function mostrarTarjeta(elemento, contenedor){
-//      contenedor.innerHTML = crearCard(elemento)
-//  }
-
- function buscarCardDetail(id){
-    return data.events.find(elemento =>elemento.id==id)
-    
- }

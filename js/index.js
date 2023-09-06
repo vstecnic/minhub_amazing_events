@@ -17,9 +17,7 @@ contenedor.addEventListener("change", ()=>{
   let filtro1= filtrarPorCategoria(data.events)
   console.log(filtro1)
   mostrarTarjetas(filtro1,contenedorTarjetas)
-  // filtrarPorCategoria(data.events)
-  // let filtro2 = filtrarPorCategoria(data.events)
-    // mostrarTarjetas(filtro2, contenedorTarjetas)
+ 
   })
 
 
@@ -53,7 +51,6 @@ function filtrarPorTexto(arreglo, texto){
 
 function filtrarPorCategoria(arreglo){
   let checkboxes= Array.from(document.getElementsByClassName("form-check-input"))
-  // let arrayCheckboxes = Array.from(checkboxes)
   let checkAzules = checkboxes.filter( check => check.checked)
   let valoresChecks = checkAzules.map(check => check.value)
   if(valoresChecks.length==0){
@@ -69,8 +66,6 @@ function filtrarPorCategoria(arreglo){
 
 //** pintar tarjetas  */
  let contenedorTarjetas = document.getElementById("contenido")
-
-
 
 
  mostrarTarjetas(data.events, contenedorTarjetas)
