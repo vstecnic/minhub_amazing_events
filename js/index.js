@@ -62,8 +62,6 @@ function filtrarPorCategoria(arreglo){
 
 
 
-
-
 //** pintar tarjetas  */
  let contenedorTarjetas = document.getElementById("contenido")
 
