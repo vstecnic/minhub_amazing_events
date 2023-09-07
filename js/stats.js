@@ -8,6 +8,7 @@
 
 //** necesito del array de data.events, me traiga/filtre todas las categorias las prop. de "estimate" y "capacity" por separado */
 //** luego que de cada uno de esos filtros me indique el mayor, el menor para estimate (ok) y sólo mayor para capacity */
+let info = data.events
  let estimate= extraerEstimate(data.events)
  //let valoresNumericos = filtrarNumericos(estimate);
  let valorMasAlto = encontrarValorMasAlto(estimate)

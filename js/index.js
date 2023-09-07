@@ -2,10 +2,24 @@ const contenedor = document.getElementById('container_checks')
 const buscador = document.getElementById('buscador')
 let url = 'https://mindhub-xj03.onrender.com/api/amazing'
 let eventos=[]
+let arrayCategory= []
 
-let categorias= extraerCategorias(data.events)
-// pintarSwitches(categorias, contenedorCategorias)
-//pintarSwitches(categorias, contenedor)
+fetch(url)
+  .then(response=> response.json())
+  .then(data=>{
+  console.log(data)
+  eventos = data.events
+  
+  createCheckboxes(data.events)
+  
+
+mostrarTarjetas(eventos, contenedorTarjetas)
+})
+
+.catch(error => console.log(error))
+
+
+
 
 
 buscador.addEventListener("input", ()=>{
@@ -13,43 +27,45 @@ buscador.addEventListener("input", ()=>{
   mostrarTarjetas(filtro1, contenedorTarjetas )
 })
 
-contenedor.addEventListener("change", ()=>{
-  console.log("me tocaste un check!")
-  let filtro1= filtrarPorCategoria(data.events)
-  console.log(filtro1)
-  mostrarTarjetas(filtro1,contenedorTarjetas)
- 
-  })
+ contenedor.addEventListener("change", ()=>{
+   console.log("me tocaste un check!")
+   let filtro1= filtrarPorCategoria(eventos)
+  //  let filtro2= filtrarPorTexto(buscador.value,filtro1)
+   console.log(filtro1)
+   mostrarTarjetas(filtro1,contenedorTarjetas)
+   })
 
 
 
-function crearSwitch(dato){
-     return `<div class="form-check form-switch col">
-                 <input class="form-check-input" type="checkbox" role="switch" id="${dato}" value="${dato}">
-                 <label class="form-check-label" for="${dato}">${dato}</label>
-            </div>`
- }
 
-function pintarSwitches(arregloDeDatos, contenedor){ 
-      let html = ''
-      arregloDeDatos.forEach(elemento => {
-      html += crearSwitch(elemento)
-    })
-    contenedor.innerHTML = html
+
+function createCheckboxes(arreglo){
+  let html = ''
+  let especies = [...new Set(arreglo.map(elemento => elemento.category))]
+  especies.forEach(especie => html+= createCheckbox(especie))
+  contenedor.innerHTML = html
+}
+function createCheckbox(categoria){
+  return `<div class="form-check form-switch col">
+              <input class="form-check-input" type="checkbox" role="switch" id="${categoria}" value="${categoria}">
+              <label class="form-check-label text-white" for="${categoria}">${categoria}</label>
+          </div>`
 }
 
- function extraerCategorias(arreglo){
-     return arreglo.map(elemento => elemento.category).filter((categoria,indice, categorias) => categorias.indexOf(categoria) === indice)
- }
+console.log(arrayCategory)
+
 
 // filtros de categorías y de input search:
-      // Filtrado de texto----
+// Filtrado de texto----
 
 function filtrarPorTexto(arreglo, texto){
   let arregloFiltrado = arreglo.filter(elemento => elemento.name.toLowerCase().includes(texto.trim().toLowerCase()) || elemento.description.toLowerCase().includes(texto.trim().toLowerCase()) || elemento.category.toLowerCase().includes(texto.trim().toLowerCase()))
   return arregloFiltrado
 }
 
+
+
+//**igual a filtroxespecies */
 function filtrarPorCategoria(arreglo){
   let checkboxes= Array.from(document.getElementsByClassName("form-check-input"))
   let checkAzules = checkboxes.filter( check => check.checked)
@@ -61,8 +77,6 @@ function filtrarPorCategoria(arreglo){
     return arregloFiltrado
 }
 
-
-
 //** pintar tarjetas  */
  let contenedorTarjetas = document.getElementById("contenido")
 
@@ -70,7 +84,11 @@ function filtrarPorCategoria(arreglo){
 // mostrarTarjetas(data.events, contenedorTarjetas)
 
  function mostrarTarjetas(datosGenerales, ubicacion){
-     let tarjetas =""
+  if(datosGenerales.length == 0){
+    ubicacion.innerHTML = `<h2 class = "display-2 fw-bolder text-white text-center bg-danger - rounded-3">No se encontraron resultados para ésta busqueda</h2>`
+    return
+  }   
+  let tarjetas =""
      for (objeto of datosGenerales){
        tarjetas += crearCard(objeto)
      }
@@ -87,29 +105,10 @@ function crearCard(objeto){
      </div>
  </div>` 
  }
-
-  fetch(url)
-       .then(response=> response.json())
-       .then(data=>{
-        console.log(data)
-        eventos = data.events
-        pintarSwitches(categorias, contenedor)
-        mostrarTarjetas(eventos, contenedorTarjetas)
-       })
-        
-        
-       // 
-    
-  
-  //respuestaDelServidor => respuestaDelServidor.json(){
-  //         console.log(datosDeInternet.events)
-  //         eventos = datosDeInternet.events
-  //         console.log(eventos)
-  //        // createCheckboxes(datosDeInternet.results)
-  //        // pintarSwitches(categorias, contenedor)
-  //         console.log(datosDeInternet);
-
-  // mostrarTarjetas(eventos, contenedorTarjetas)
-
-.catch(error => console.log(error))
+ function crearSwitch(dato){
+  return `<div class="form-check form-switch col">
+              <input class="form-check-input" type="checkbox" role="switch" id="${dato}" value="${dato}">
+              <label class="form-check-label" for="${dato}">${dato}</label>
+         </div>`
+}
 
