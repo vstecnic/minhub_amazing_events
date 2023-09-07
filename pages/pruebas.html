@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="icon" type="image/jpg" href="../assets/favicon.png" >
+    <title>Index</title>
+</head>
+
+<body>
+    <header class="container p-2">
+        <nav class="navbar navbar-expand-lg bk_color" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/amazing_brand.png" alt="Bootstrap" width="150" height="80" class=logo>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav bk_color">
+                        <a class="nav-link" href="#">HOME</a>
+                        <a class="nav-link" href="./pages/upcoming.html">UPCOMING EVENTS</a>
+                        <a class="nav-link" href="./pages/past.html">PAST EVENTS</a>
+                        <a class="nav-link" href="./pages/contact.html">CONTACT</a>
+                        <a class="nav-link" href="./pages/stats.html">STATS</a>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../assets/music_concert.jpg" class="img_carrousel d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/costume_party.jpg" class="img_carrousel d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/optional_banner_1.jpg" class="img_carrousel d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <h1 class="text-center" id="h1_home">
+            HOME
+        </h1>
+    </header>
+    <main class="container py-3">
+         <div id="stats" class="row justify-content-center">
+                <div id="hAttendance" class="row col-3 gap-2">
+                    <h2>The Highest percentage of attendance</h2>
+
+                </div>
+                <div id="lAttendance" class="row col-3 gap-2">
+                    <h2>The Lowest percentage of attendance</h2>
+
+                </div>
+                <div id="lCapacity" class="row col-3 gap-2">
+                    <h2>Event with larger capacity</h2>
+
+                </div>    
+         </div>
+        <div class="row bg-dark m-0">
+            <div class="col-12 col-md-8">
+                            
+                <div id="container_checks" class="row categories">
+                    
+
+
+                    
+
+                </div>               
+            </div>
+            <div class="search_bar col-12 col-md-4 bg-dark " bg>
+                <nav class="navbar bg-body-tertiary bg-dark"  data-bs-theme="dark">
+                    <div class="container-fluid">
+                      <form class="d-flex" role="search">
+                        <input id="buscador" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+                        <button class="search btn btn-outline-success" type="submit"><img src="../assets/search.svg" class="search_img" srcset=""></button>
+                      </form>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+        <div class="row p-2 gap-3 justify-content-center" id="contenido">
+           
+        </div>
+    </main>
+    <footer class="container bg-dark" data-bs-theme="dark">
+        <div class="social_footer col-12 p-1 text-center col-lg-6 text-end">
+            <img src="../assets/social_icons/twitter.svg" alt="" class="social_icon">
+            <img src="../assets/social_icons/linkedin.svg" alt="" class="social_icon">
+            <img src="../assets/social_icons/whatsapp.svg" alt="" class="social_icon">
+        </div>
+        <h4 class="col-12 p-1 text-center col-lg-4 p-lg-1 ">Cohort03-TN</h4>
+        
+        <div class="row designed_footer">
+             <p class="col-12  col-lg-12 text-center">Designed by Juan Gabriel Soto Valenzuela &copy;2023 | Contact <a
+                    href="https://github.com/vstecnic">Here</a> </p>
+         </div>
+    </footer>
+    <!-- <script src="../js/data.js"></script> -->
+    <script src="../js/index.js"></script>
+    <script src="../js/stats.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

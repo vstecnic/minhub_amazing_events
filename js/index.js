@@ -1,10 +1,11 @@
 const contenedor = document.getElementById('container_checks')
 const buscador = document.getElementById('buscador')
-
+let url = 'https://mindhub-xj03.onrender.com/api/amazing'
+let eventos=[]
 
 let categorias= extraerCategorias(data.events)
 // pintarSwitches(categorias, contenedorCategorias)
-pintarSwitches(categorias, contenedor)
+//pintarSwitches(categorias, contenedor)
 
 
 buscador.addEventListener("input", ()=>{
@@ -66,7 +67,7 @@ function filtrarPorCategoria(arreglo){
  let contenedorTarjetas = document.getElementById("contenido")
 
 
- mostrarTarjetas(data.events, contenedorTarjetas)
+// mostrarTarjetas(data.events, contenedorTarjetas)
 
  function mostrarTarjetas(datosGenerales, ubicacion){
      let tarjetas =""
@@ -86,4 +87,29 @@ function crearCard(objeto){
      </div>
  </div>` 
  }
+
+  fetch(url)
+       .then(response=> response.json())
+       .then(data=>{
+        console.log(data)
+        eventos = data.events
+        pintarSwitches(categorias, contenedor)
+        mostrarTarjetas(eventos, contenedorTarjetas)
+       })
+        
+        
+       // 
+    
+  
+  //respuestaDelServidor => respuestaDelServidor.json(){
+  //         console.log(datosDeInternet.events)
+  //         eventos = datosDeInternet.events
+  //         console.log(eventos)
+  //        // createCheckboxes(datosDeInternet.results)
+  //        // pintarSwitches(categorias, contenedor)
+  //         console.log(datosDeInternet);
+
+  // mostrarTarjetas(eventos, contenedorTarjetas)
+
+.catch(error => console.log(error))
 
