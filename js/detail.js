@@ -1,6 +1,6 @@
 let parametros = new URLSearchParams(window.location.search)
 let id =parametros.get("id")
-const contenedorTarjetas = document.getElementById("contenido")
+const contenedorTarjetas = document.getElementById("contenidoDetail")
 
 
 let tarjetaDetail = buscarCardDetail(id)

@@ -13,7 +13,7 @@ fetch(url)
   createCheckboxes(data.events)
   
 
-mostrarTarjetas(eventos, contenedorTarjetas)
+  mostrarTarjetas(eventos, contenedorTarjetas)
 })
 
 .catch(error => console.log(error))
@@ -23,8 +23,10 @@ mostrarTarjetas(eventos, contenedorTarjetas)
 
 
 buscador.addEventListener("input", ()=>{
-  let filtro1 = filtrarPorTexto(data.events, buscador.value)
-  mostrarTarjetas(filtro1, contenedorTarjetas )
+  let filtro1 = filtrarPorCategoria(eventos)
+  let filtro2 = filtrarPorTexto(filtro1, buscador.value)
+  
+  mostrarTarjetas(filtro2, contenedorTarjetas )
 })
 
  contenedor.addEventListener("change", ()=>{
@@ -99,7 +101,7 @@ function crearCard(objeto){
    return    `<div class="card" style="width: 18rem;" >
     <img src="${objeto.image}" class="card-img-top p-2" alt="...">    <div class="card-body">
          <h5 class="card-title">${objeto.name}</h5>
-         <p class="card-text">Category: ${objeto.category}</b> <br> <b>Date: </b>${objeto.date}
+         <p class="card-text"><b>Date: </b>${objeto.date}
          <br> <b>Category: </b>${objeto.category}</p>
          <a href="./pages/details.html?id=${objeto._id}" class="btn btn-primary">More Info...</a>
      </div>
@@ -111,4 +113,3 @@ function crearCard(objeto){
               <label class="form-check-label" for="${dato}">${dato}</label>
          </div>`
 }
-
