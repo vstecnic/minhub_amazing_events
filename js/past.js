@@ -83,7 +83,7 @@ function filtrarPorCategoria(arreglo){
  function mostrarTarjetasUpcoming(datosGenerales, ubicacion){
     let tarjetas =""
     for (objeto of datosGenerales){
-        if (objeto.date < fecha){ 
+        if (objeto.date > fecha){ 
       tarjetas += crearCard(objeto)
         } 
     }
