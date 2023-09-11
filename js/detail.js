@@ -1,12 +1,5 @@
-let parametros = new URLSearchParams(window.location.search)
-let id =parametros.get("id")
-const contenedorTarjetas = document.getElementById("contenidoDetail")
+//let parametros = new URLSearchParams(window.location.search)
 
-
-let tarjetaDetail = buscarCardDetail(id)
-console.log(tarjetaDetail)
-
-mostrarTarjeta(tarjetaDetail, contenedorTarjetas)
 
 function buscarCardDetail(id){
     let eventoEncontrado = data.events.find(elemento =>elemento._id==id)

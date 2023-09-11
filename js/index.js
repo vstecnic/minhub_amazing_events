@@ -12,14 +12,11 @@ fetch(url)
   
   createCheckboxes(data.events)
   
-
   mostrarTarjetas(eventos, contenedorTarjetas)
+
 })
 
 .catch(error => console.log(error))
-
-
-
 
 
 buscador.addEventListener("input", ()=>{
@@ -38,13 +35,10 @@ buscador.addEventListener("input", ()=>{
    })
 
 
-
-
-
 function createCheckboxes(arreglo){
   let html = ''
-  let especies = [...new Set(arreglo.map(elemento => elemento.category))]
-  especies.forEach(especie => html+= createCheckbox(especie))
+  let Checks = [...new Set(arreglo.map(elemento => elemento.category))]
+  Checks.forEach(check => html+= createCheckbox(check))
   contenedor.innerHTML = html
 }
 function createCheckbox(categoria){
