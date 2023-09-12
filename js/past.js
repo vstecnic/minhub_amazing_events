@@ -24,7 +24,7 @@ fetch(url)
    let filtro1 = filtrarPorCategoria(eventos)
    let filtro2 = filtrarPorTexto(filtro1, buscador.value)
   
-   mostrarTarjetas(filtro2, contenedorTarjetas )
+   mostrarTarjetasUpcoming(filtro2, contenedorTarjetas )
  })
 
   contenedor.addEventListener("change", ()=>{
@@ -97,7 +97,7 @@ function crearCard(objeto){
          <h5 class="card-title">${objeto.name}</h5>
          <p class="card-text"><b>Date: </b>${objeto.date}
          <br> <b>Category: </b>${objeto.category}</p>
-         <a href="./pages/details.html?id=${objeto._id}" class="btn btn-primary">More Info...</a>
+         <a href="../pages/details.html?id=${objeto._id}" class="btn btn-primary">More Info...</a>
      </div>
  </div>` 
  }
