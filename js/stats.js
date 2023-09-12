@@ -16,21 +16,27 @@ fetch(url)
 .catch(error => console.log(error))
 
 
-
-let masPlatudos = []
-let primerosLista = []
-let porcentageDePlata = []
-
+let masPlatudos = []  //new york
+let primerosLista = [] //new york
+let mayorAtendance = [] //metallica
+let menorAtendance = []
 
 function extraerDatosPrimeraTabla(datos) {
-    eventos.sort((a, b) =>   b.assistance - a.assistance)
-    masPlatudos.push(datos[0], datos[1], datos[2])
-
-    datos.sort((a, b) => a.list - b.list)
-    primerosLista.push(datos[0], datos[1], datos[2])
 
     datos.sort((a, b) => ((b.assistance * 100) / b.capacity) - ((a.assistance * 100) / a.capacity))
-    porcentageDePlata.push(datos[0], datos[1], datos[2])
+    mayorAtendance.push(datos[0])
+
+
+    datos.sort((a, b) => ((a.assistance * 100) / a.capacity) - ((b.assistance * 100) / b.capacity))
+    menorAtendance.push(datos[0])
+
+     eventos.sort((a, b) =>   b.assistance - a.assistance)
+     masPlatudos.push(datos[0])
+
+     datos.sort((a, b) => a.list - b.list)
+     primerosLista.push(datos[0])
+
+   
 
 }
 
@@ -38,9 +44,11 @@ function pintarEstadisticas() {
     let html = ''
     for (let i = 0; i < primerosLista.length; i++) {
         html += `<tr>
-                     <td>${masPlatudos[i].name} con $${masPlatudos[i].currency}</td>
-                     <td>${primerosLista[i].name} ${primerosLista[i].list}°</td>
-                     <td>${porcentageDePlata[i].name}</td>
+                    <td>${mayorAtendance[i].name}</td>
+                      <td>${menorAtendance[i].name} </td>
+                      <td>${primerosLista[i].name}</td>
+                      
+                      
                  </tr>`
     }
     tabla.innerHTML = html
