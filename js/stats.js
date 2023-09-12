@@ -16,10 +16,10 @@ fetch(url)
 .catch(error => console.log(error))
 
 
-let masPlatudos = []  //new york
-let primerosLista = [] //new york
+let largerCapacity = []  //new york --- mayor capacity ny2023
+let primerosLista = [] 
 let mayorAtendance = [] //metallica
-let menorAtendance = []
+let menorAtendance = [] //jurasic park
 
 function extraerDatosPrimeraTabla(datos) {
 
@@ -30,8 +30,8 @@ function extraerDatosPrimeraTabla(datos) {
     datos.sort((a, b) => ((a.assistance * 100) / a.capacity) - ((b.assistance * 100) / b.capacity))
     menorAtendance.push(datos[0])
 
-     eventos.sort((a, b) =>   b.assistance - a.assistance)
-     masPlatudos.push(datos[0])
+     eventos.sort((a, b) =>   b.capacity - a.capacity)
+     largerCapacity.push(datos[0])
 
      datos.sort((a, b) => a.list - b.list)
      primerosLista.push(datos[0])
@@ -46,9 +46,7 @@ function pintarEstadisticas() {
         html += `<tr>
                     <td>${mayorAtendance[i].name}</td>
                       <td>${menorAtendance[i].name} </td>
-                      <td>${primerosLista[i].name}</td>
-                      
-                      
+                      <td>${largerCapacity[i].name}</td>                
                  </tr>`
     }
     tabla.innerHTML = html
