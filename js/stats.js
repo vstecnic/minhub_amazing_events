@@ -121,7 +121,7 @@ function extraerDatosSegundaTabla(datos) {
 
       let sumaPercentage = 0
       datosPorCategoria.forEach(elemento => sumaPercentage +=(elemento.estimate*100)/elemento.capacity )
-      arraySegundaTabla.percentage = sumaPercentage
+      arraySegundaTabla.percentage = sumaPercentage / datosPorCategoria.length
       console.log(sumaPercentage)
 
 
@@ -137,7 +137,7 @@ function pintarEstadisticasSegundaTabla() {
   datosTabla2.forEach(arraySegundaTabla => html += `<tr>
                                                        <td>${arraySegundaTabla.categoria}</td>
                                                        <td>$${arraySegundaTabla.revenues.toFixed(2)}</td>
-                                                       <td>${arraySegundaTabla.percentage.toFixed(2)}</td>
+                                                       <td>${arraySegundaTabla.percentage.toFixed(2)} %</td>
                                                     </tr>`
     )
   tablaUpcoming.innerHTML = html;
@@ -163,7 +163,7 @@ function extraerDatosTerceraTabla(datos) {
 
       let sumaPercentage = 0
       datosPorCategoria.forEach(elemento => sumaPercentage +=(elemento.assistance*100)/elemento.capacity )
-      arrayTerceraTabla.percentage = sumaPercentage
+      arrayTerceraTabla.percentage = sumaPercentage / datosPorCategoria.length
       console.log(sumaPercentage)
 
 
@@ -179,7 +179,7 @@ function extraerDatosTerceraTabla(datos) {
     datosTabla3.forEach(arrayTerceraTabla => html += `<tr>
                                                           <td>${arrayTerceraTabla.categoria}</td>
                                                           <td>${arrayTerceraTabla.revenues.toFixed(2)} </td>
-                                                          <td>${arrayTerceraTabla.percentage.toFixed(2)}</td>                
+                                                          <td>${arrayTerceraTabla.percentage.toFixed(2)} %</td>                
                                                      </tr>`
     )
     tabla3Past.innerHTML = html;
