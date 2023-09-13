@@ -9,6 +9,7 @@ let fechaUpcoming=[];
 let arraySegundaTabla=[]
 let arrayTercerTabla=[];
 let datosTabla2= [];
+let datosTabla3= [];
 
 eventStatics();
 upcomingStatics();
@@ -55,8 +56,8 @@ function pastStatics() {
       .then((data) => {
         console.log(data);
         pastEvents =  data.events.filter(elem=>elem.date < data.currentDate)
-       
         console.log(pastEvents)
+        
         extraerDatosTerceraTabla(pastEvents);
         pintarEstadisticasTerceraTabla(pastEvents);
       })
@@ -143,46 +144,48 @@ function pintarEstadisticasSegundaTabla() {
                                                        <td>${arraySegundaTabla.percentage.toFixed(2)}</td>
                                                     </tr>`
     )
-
-  // for (let i = 0; i < arraySegundaTabla.length; i++) {
-  //   html += `<tr>
-  //                           <td>${arraySegundaTabla[i].category}</td>
-  //                             <td>${arraySegundaTabla[i].name} </td>
-  //                             <td>${arraySegundaTabla[i].name}</td>                
-  //                        </tr>`;
-  // }
   tablaUpcoming.innerHTML = html;
 }
 
 
 function extraerDatosTerceraTabla(datos) {
-   
-    // datos.sort(
-    //   (a, b) =>
-    //     (b.assistance * 100) / b.capacity - (a.assistance * 100) / a.capacity
-    // );
-    // mayorAtendance.push(datos[0]);
-    // datos.sort(
-    //   (a, b) =>
-    //     (a.assistance * 100) / a.capacity - (b.assistance * 100) / b.capacity
-    // );
-    // menorAtendance.push(datos[0]);
-    // eventos.sort((a, b) => b.capacity - a.capacity);
-    // largerCapacity.push(datos[0]);
   
-    // datos.sort((a, b) => a.list - b.list);
-    // primerosLista.push(datos[0]);
+  let categorias = [...new Set(datos.map(elemento => elemento.category))]
+  console.log(categorias);
+  categorias.forEach(categoria => {
+      let arrayTerceraTabla = {
+          categoria: categoria,
+          revenues: 0,
+          percentage: 0,
+      }
+      console.log (arrayTerceraTabla)
+      let sumaRevenues = 0
+      let datosPorCategoria = datos.filter(elemento => elemento.category == categoria)
+      datosPorCategoria.forEach(elemento => sumaRevenues+= +elemento.assistance * elemento.price)
+      arrayTerceraTabla.revenues = sumaRevenues
+      console.log(sumaRevenues)
+
+      let sumaPercentage = 0
+      datosPorCategoria.forEach(elemento => sumaPercentage +=(elemento.assistance*100)/elemento.capacity )
+      arrayTerceraTabla.percentage = sumaPercentage
+      console.log(sumaPercentage)
+
+
+      datosTabla2.push(arrayTerceraTabla)
+  })
+  console.log()
+
+
   }
   
-  function pintarEstadisticasTerceraTabla(arrayTercerTabla) {
+  function pintarEstadisticasTerceraTabla() {
     let html = "";
-    for (let i = 0; i < arrayTercerTabla.length; i++) {
-      html += `<tr>
-                              <td>${arrayTercerTabla[i].category}</td>
-                                <td>${arrayTercerTabla[i].revenue} </td>
-                                <td>${arrayTercerTabla[i].porcentaje}</td>                
-                           </tr>`;
-    }
+    datosTabla3.forEach(arrayTerceraTabla => html += `<tr>
+                                                          <td>${arrayTerceraTabla.categoria}</td>
+                                                          <td>${arrayTerceraTabla.revenues.toFixed(2)} </td>
+                                                          <td>${arrayTerceraTabla.percentage.toFixed(2)}</td>                
+                                                     </tr>`
+    )
     tablaPast.innerHTML = html;
   }
   
