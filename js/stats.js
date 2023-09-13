@@ -136,7 +136,7 @@ function pintarEstadisticasSegundaTabla() {
   let html = "";
   datosTabla2.forEach(arraySegundaTabla => html += `<tr>
                                                        <td>${arraySegundaTabla.categoria}</td>
-                                                       <td>$${arraySegundaTabla.revenues.toFixed(2)}</td>
+                                                       <td>$${arraySegundaTabla.revenues.toLocaleString('es-ES')}</td>
                                                        <td>${arraySegundaTabla.percentage.toFixed(2)} %</td>
                                                     </tr>`
     )
@@ -178,7 +178,7 @@ function extraerDatosTerceraTabla(datos) {
     let html = "";
     datosTabla3.forEach(arrayTerceraTabla => html += `<tr>
                                                           <td>${arrayTerceraTabla.categoria}</td>
-                                                          <td>${arrayTerceraTabla.revenues.toFixed(2)} </td>
+                                                          <td>$ ${arrayTerceraTabla.revenues.toLocaleString('es-ES')} </td>
                                                           <td>${arrayTerceraTabla.percentage.toFixed(2)} %</td>                
                                                      </tr>`
     )
