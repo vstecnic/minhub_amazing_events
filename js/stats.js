@@ -1,7 +1,14 @@
 let url = "https://mindhub-xj03.onrender.com/api/amazing";
 let eventos = [];
+let eventosUpcoming = [];
 let arrayCategory = [];
-let datosTabla2 = []
+let fecha = '';
+let pastEvents= [];
+let upcomingEvents= [];
+let fechaUpcoming=[];
+let arraySegundaTabla=[]
+let arrayTercerTabla=[];
+let datosTabla2= [];
 
 eventStatics();
 upcomingStatics();
@@ -14,7 +21,6 @@ function eventStatics() {
     .then((data) => {
       console.log(data);
       eventos = data.events;
-      fecha = data.currentDate;
 
       extraerDatosPrimeraTabla(eventos);
       pintarEstadisticas();
@@ -22,33 +28,37 @@ function eventStatics() {
 
     .catch((error) => console.log(error));
 }
-//////*************** OK  SEGUNDA TABLA*********/
+//////*************** OK  *********/
 function upcomingStatics() {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      eventos = data.events;
-      fecha = data.currentDate
+      upcomingEvents = data.events.filter(elem=>elem.date > data.currentDate)
+      console.log(upcomingEvents)
+      
 
-      extraerDatosSegundaTabla(eventos);
-      pintarEstadisticasSegundaTabla();
+      console.log(fechaUpcoming)
+     
+
+      extraerDatosSegundaTabla(upcomingEvents);
+      pintarEstadisticasSegundaTabla(upcomingEvents);
     })
 
     .catch((error) => console.log(error));
 }
 
-//////*************** OK  TERCERA TABLA *********/
+//////*************** OK  *********/
 function pastStatics() {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        eventos = data.events;
-        // fecha = data.currentDate
-  
-        extraerDatosTerceraTabla(eventos);
-        pintarEstadisticasTerceraTabla();
+        pastEvents =  data.events.filter(elem=>elem.date < data.currentDate)
+       
+        console.log(pastEvents)
+        extraerDatosTerceraTabla(pastEvents);
+        pintarEstadisticasTerceraTabla(pastEvents);
       })
   
       .catch((error) => console.log(error));
@@ -58,8 +68,6 @@ let largerCapacity = []; //new york --- mayor capacity ny2023
 let primerosLista = [];
 let mayorAtendance = []; //metallica
 let menorAtendance = []; //jurasic park
-let segundosLista = [];
-let tercerlosLista = [];
 
 // Funciones:
 //*** REVENUES (Ganancia): Suma de la (asistencia o estimado) * precio de cada evento, de cada categoría. */
@@ -98,104 +106,83 @@ function pintarEstadisticas() {
 }
 
 function extraerDatosSegundaTabla(datos) {
-  //  if (objeto.date > fecha){
 
-  // datos.sort(
-  //   (a, b) =>
-  //     (b.assistance * 100) / b.capacity - (a.assistance * 100) / a.capacity
-  // );
-  // mayorAtendance.push(datos[0]);
-  // datos.sort(
-  //   (a, b) =>
-  //     (a.assistance * 100) / a.capacity - (b.assistance * 100) / b.capacity
-  // );
-  // menorAtendance.push(datos[0]);
-  // eventos.sort((a, b) => b.capacity - a.capacity);
-  // largerCapacity.push(datos[0]);
-
-  // datos.sort((a, b) => a.list - b.list);
-  // primerosLista.push(datos[0]);
-  let categories = [...new Set(datos.map(elemento => elemento.category))]
-  console.log(categories);
-  categories.forEach(categorie => {
-      let fila = {
-          Categories: categorie,
-          Revenues: 0,
-          Attendance: 0,
+  let categorias = [...new Set(datos.map(elemento => elemento.category))]
+  console.log(categorias);
+  categorias.forEach(categoria => {
+      let arraySegundaTabla = {
+          categoria: categoria,
+          revenues: 0,
+          percentage: 0,
       }
-
+      console.log (arraySegundaTabla)
       let sumaRevenues = 0
-      let datosPorCategories = datos.filter(elemento => elemento.category == categorie)
-      datosPorCategories.forEach(elemento => sumaRevenues+= +((elemento._id) * elemento.price) )
-      fila.Revenues = sumaRevenues
+      let datosPorCategoria = datos.filter(elemento => elemento.category == categoria)
+      datosPorCategoria.forEach(elemento => sumaRevenues+= +elemento.estimate * elemento.price)
+      arraySegundaTabla.revenues = sumaRevenues
       console.log(sumaRevenues)
 
-      let sumaAttendance = 0
-      datosPorCategories.forEach(elemento => sumaAttendance += +((elemento._id* 100) / elemento.capacity))
-      fila.Attendance = sumaAttendance
-      console.log(sumaAttendance)
+      let sumaPercentage = 0
+      datosPorCategoria.forEach(elemento => sumaPercentage +=(elemento.estimate*100)/elemento.capacity )
+      arraySegundaTabla.percentage = sumaPercentage
+      console.log(sumaPercentage)
 
 
-      segundosLista.push(fila)
+      datosTabla2.push(arraySegundaTabla)
   })
-  console.log();
+  console.log()
+
+
 }
 
 function pintarEstadisticasSegundaTabla() {
   let html = "";
- segundosLista.forEach(fila => html += `<tr>
-    
-                              <td>${fila.Categories}</td>
-                              <td>${fila.Revenues} </td>
-                              <td>${fila.Attendance}</td>                
-                         </tr>`
-                         )                      
-  
+  datosTabla2.forEach(arraySegundaTabla => html += `<tr>
+                                                       <td>${arraySegundaTabla.categoria}</td>
+                                                       <td>$${arraySegundaTabla.revenues.toFixed(2)}</td>
+                                                       <td>${arraySegundaTabla.percentage.toFixed(2)}</td>
+                                                    </tr>`
+    )
+
+  // for (let i = 0; i < arraySegundaTabla.length; i++) {
+  //   html += `<tr>
+  //                           <td>${arraySegundaTabla[i].category}</td>
+  //                             <td>${arraySegundaTabla[i].name} </td>
+  //                             <td>${arraySegundaTabla[i].name}</td>                
+  //                        </tr>`;
+  // }
   tablaUpcoming.innerHTML = html;
- 
-  }
-
-
-
+}
 
 
 function extraerDatosTerceraTabla(datos) {
-  let categories = [...new Set(datos.map(elemento => elemento.category))]
-  console.log(categories);
-  categories.forEach(categorie => {
-      let fila = {
-          Categories: categorie,
-          Revenues: 0,
-          Attendance: 0,
-      }
-
-      let sumaRevenues = 0
-      let datosPorCategories = datos.filter(elemento => elemento.category == categorie)
-      datosPorCategories.forEach(elemento => sumaRevenues+= +((elemento._id) * elemento.price) )
-      fila.Revenues = sumaRevenues
-      console.log(sumaRevenues)
-
-      let sumaAttendance = 0
-      datosPorCategories.forEach(elemento => sumaAttendance += +((elemento.assistance + elemento.estimate* 100) / elemento.capacity))
-      fila.Attendance = sumaAttendance
-      console.log(sumaAttendance)
-
-
-      tercerlosLista.push(fila)
-  })
-  console.log();
-}
-
-function pintarEstadisticasTerceraTabla() {
-  let html = "";
-  tercerlosLista.forEach(fila => html += `<tr>
-    
-                              <td>${fila.Categories}</td>
-                              <td>${fila.Revenues} </td>
-                              <td>${fila.Attendance}</td>                
-                         </tr>`
-                         )                      
+   
+    // datos.sort(
+    //   (a, b) =>
+    //     (b.assistance * 100) / b.capacity - (a.assistance * 100) / a.capacity
+    // );
+    // mayorAtendance.push(datos[0]);
+    // datos.sort(
+    //   (a, b) =>
+    //     (a.assistance * 100) / a.capacity - (b.assistance * 100) / b.capacity
+    // );
+    // menorAtendance.push(datos[0]);
+    // eventos.sort((a, b) => b.capacity - a.capacity);
+    // largerCapacity.push(datos[0]);
   
-  tablaPast.innerHTML = html;
-}
-
+    // datos.sort((a, b) => a.list - b.list);
+    // primerosLista.push(datos[0]);
+  }
+  
+  function pintarEstadisticasTerceraTabla(arrayTercerTabla) {
+    let html = "";
+    for (let i = 0; i < arrayTercerTabla.length; i++) {
+      html += `<tr>
+                              <td>${arrayTercerTabla[i].category}</td>
+                                <td>${arrayTercerTabla[i].revenue} </td>
+                                <td>${arrayTercerTabla[i].porcentaje}</td>                
+                           </tr>`;
+    }
+    tablaPast.innerHTML = html;
+  }
+  
