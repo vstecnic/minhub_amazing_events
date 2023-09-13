@@ -38,10 +38,6 @@ function upcomingStatics() {
       upcomingEvents = data.events.filter(elem=>elem.date > data.currentDate)
       console.log(upcomingEvents)
       
-
-      console.log(fechaUpcoming)
-     
-
       extraerDatosSegundaTabla(upcomingEvents);
       pintarEstadisticasSegundaTabla(upcomingEvents);
     })
@@ -57,7 +53,7 @@ function pastStatics() {
         console.log(data);
         pastEvents =  data.events.filter(elem=>elem.date < data.currentDate)
         console.log(pastEvents)
-        
+
         extraerDatosTerceraTabla(pastEvents);
         pintarEstadisticasTerceraTabla(pastEvents);
       })
@@ -171,7 +167,7 @@ function extraerDatosTerceraTabla(datos) {
       console.log(sumaPercentage)
 
 
-      datosTabla2.push(arrayTerceraTabla)
+      datosTabla3.push(arrayTerceraTabla)
   })
   console.log()
 
@@ -186,6 +182,6 @@ function extraerDatosTerceraTabla(datos) {
                                                           <td>${arrayTerceraTabla.percentage.toFixed(2)}</td>                
                                                      </tr>`
     )
-    tablaPast.innerHTML = html;
+    tabla3Past.innerHTML = html;
   }
   
