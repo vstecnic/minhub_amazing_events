@@ -1,6 +1,6 @@
-/* *{
+ /* *{
     outline: 1px solid red;
-} */
+}  */
 
 .logo{
     width: 100%;
@@ -123,6 +123,9 @@ header{
 main{
     min-height: 14vh;
     background-color: #040D12;
+}
+body{
+    background-color: #040D12!important;
 }
 .categories{
     color: grey;
