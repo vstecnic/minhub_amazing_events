@@ -45,6 +45,10 @@ h3{
     font-size: 3rem !important;
     left: 0.3em;
 }
+.carousel-caption{
+    color:#d90368 !important;
+    text-decoration: solid!important;
+}
 @media only screen and (min-width:425px) and (max-width:767px){ 
     #h1_home{
         top:8.7em;
