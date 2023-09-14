@@ -1,0 +1,15 @@
+.dark {
+    background-color: rgb(255, 255, 255)
+   /* background-color: #333; /* Color oscuro de fondo */
+    color: #ffff; /* Color de texto claro */
+   
+}
+
+.light {
+    background-color: rgb(255, 255, 255); /* Color claro de fondo */
+    color: #181616; /* Color de texto claro */
+
+    
+ 
+    
+}
