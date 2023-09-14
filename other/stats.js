@@ -14,7 +14,6 @@ let datosTabla3= [];
 eventStatics();
 upcomingStatics();
 pastStatics();
-//<a href="../pages/details.html?id=${objeto._id}">More Info...</a>
 
 //////********    OK ************* */
 function eventStatics() {
